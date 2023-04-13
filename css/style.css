@@ -168,3 +168,52 @@ select{
     border: 1px solid #707070;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 960px) {
+    .cancelButton{
+        margin-left: 0px;
+    }
+    .form{
+        width: 85%;
+        padding: 44px 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .form{
+        margin-top: 10px;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .uploadButton {
+        justify-content: flex-start;
+    }
+    .profile-radio-button {
+        flex-flow: wrap;
+    }
+    .submit-reset{
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .submitButton{
+        margin: 0;
+    }
+    .buttonPattern{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.submitButton:hover{
+    background-color: #82A70C;
+    color: aliceblue;
+}
+
+.resetButton:hover{
+background-color: #B7B7B7;
+}
