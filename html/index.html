@@ -9,6 +9,7 @@
    <script defer src="../Js/operation.js"></script>
    <title>Employee Payroll App</title>
 </head>
+
 <body>
       <!-- UC1 -->
    <header class="header-content header">
@@ -23,11 +24,12 @@
 
       <!-- UC2 -->
    <div class="form-content">
-      <form class="form" action="#" onsubmit="save();return false">
+      <form class="form" action="" onsubmit="save();return false">
          <div class="form-head"> EMPLOYEE PAYROLL FORM </div>
             <div class="row-content">
                <label class="label text" for="name">Name</label>
                <input class="input" type="text" id="name" name="name" placeholder="Your Name.." required>
+               <error-output class="name-error" for="name"></error-output>
             </div>
 
             <!-- UC3 -->
@@ -135,9 +137,9 @@
                      <option value="Dec">December</option>
                   </select>
                   <select  id="year" name="Year">
-                     <option value="2023">2020</option>
-                     <option value="2022">2019</option>
-                     <option value="2021">2018</option>
+                     <option value="2023">2023</option>
+                     <option value="2022">2022</option>
+                     <option value="2021">2021</option>
                      <option value="2020">2020</option>
                      <option value="2019">2019</option>
                      <option value="2018">2018</option>

@@ -215,5 +215,11 @@ select{
 }
 
 .resetButton:hover{
-background-color: #B7B7B7;
+    background-color: #B7B7B7;
+}
+
+error-output{
+    font-size: 12px;
+    font-style: italic;
+    color: rgb(138, 3, 3);
 }
