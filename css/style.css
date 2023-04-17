@@ -219,7 +219,8 @@ select{
 }
 
 error-output{
-    font-size: 12px;
+    margin-left: 10px;
+    font-size: 20px;
     font-style: italic;
     color: rgb(138, 3, 3);
 }

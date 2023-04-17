@@ -1,9 +1,39 @@
 
 // EventListner
-const salary= document.querySelector('#salary');
-const output= document.querySelector('.salary-output');
-    salary.addEventListener('input', function(){
+
+window.addEventListener('DOMContentLoaded', (event) =>{
+    const name = document.querySelector('#name');
+    const textError = document.querySelector('.text-error');
+    name.addEventListener('input', function(){
+        let nameRegex = RegExp('^[A-Z][a-z]{2,}$');
+        if(name.value.length ==0){
+            textError.textContent="";
+            return;
+        }
+        try{
+            (new EmployeePayrollData()).name= value.name;
+            textError.textContent="";
+        }catch (e) {
+            textError.textContent=e;
+        }
+    });
+
+    const salary= document.querySelector('#salary');
+    const output= document.querySelector('.salary-output');
     output.textContent=salary.value;
+    salary.addEventListener('input', function(){
+        output.textContent=salary.value;
+    });
+});
+
+const setname = document.querySelector('#name');
+const nameError = document.querySelector('.name-error');
+    setname.addEventListener('input', function(){
+    let nameRegex = RegExp('^[A-Z][a-z]{2,}$');
+    if(nameRegex.test(setname.value)){
+        nameError.textContent="";
+        this.name = setname;
+    } else nameError.textContent="Name is Incorrect!";
 });
 
 
@@ -14,56 +44,87 @@ class EmployeePayrollData {
     salary;
     startDate;
 
-    // constructor(name, gender, department, salary, startDate) {
-    //     this.name = name;
-    //     this.gender =gender;
-    //     this.department = department;
-    //     this.salary = salary;
-    //     this.startDate = startDate;    
-    // }
+    constructor(name, gender, department, salary, startDate) {
+        this.name = name;
+        this.gender =gender;
+        this.department = department;
+        this.salary = salary;
+        this.startDate = startDate;    
+    }
 
-    // get name(){
-    //     return this.name;
-    // }
+    get id() {
+        return this._id;
+    
+    }
 
-    // set name(name){
-    //     this.name = name;
-    // }
+    set id(id){
+        this._id = id;
+    }
 
-    // get gender(){
-    //     return this.gender;
-    // }
+    get name(){
+        return this._name;
+    }
 
-    // set gender(gender){
-    //     this.gender = gender;
-    // }
+    set name(name){
+            let nameRegex = RegExp('^[A-Z][a-z]{2,}$')
+            if(nameRegex.test(name))
+        this._name = name;
+        else throw "Name is Incorrect!";
+    }
 
-    // get department(){
-    //     return this.department;
-    // }
+    get profilePic(){
+        return this._profilePic;
+    }
 
-    // set department(department){
-    //     this.department = department;
-    // }
+    set profilePic(profilePic){
+        this._profilePic = profilePic;
+    }
 
-    // get salary(){
-    //     return this.salary;
-    // }
+    get gender(){
+        return this._gender;
+    }
 
-    // set salary(salary){
-    //     this.salary = salary;
-    // }
+    set gender(gender){
+        this._gender = gender;
+    }
 
-    // get startDate(){
-    //     return this.startDate;
-    // }
+    get department(){
+        return this._department;
+    }
 
-    // set startDate(startDate){
-    //     this.startDate = startDate;
-    // }
+    set department(department){
+        this._department = department;
+    }
+
+    get salary(){
+        return this._salary;
+    }
+
+    set salary(salary){
+        this._salary = salary;
+    }
+
+    get note(){
+        return this._note;
+    }
+
+    set note(note){
+        this._note = note;
+    }
+
+    get startDate(){
+        return this._startDate;
+    }
+
+    set startDate(startDate){
+        this._startDate = startDate;
+    }
    
-    toString() {             
-        return "name=" +this.name + ", gender=" +this.gender + ", department=" +this.department  
+    toString() {   
+        const option = {year : 'numeric' , month : 'long' , day: 'numeric'};
+        const empDate = !this.startDate? "undefined" :
+                        this.startDate.toLocalDateString("en-US", options);
+        return "id= " +this.id + ", name =" +this.name + ", gender=" +this.gender + ", department=" +this.department  
             +", salary=" +this.salary +", day=" +this.day +", month=" +this.month +", year=" +this.year ;
     }
 

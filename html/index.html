@@ -22,15 +22,26 @@
       </div>
    </header>
 
-      <!-- UC2 -->
-   <div class="form-content">
-      <form class="form" action="" onsubmit="save();return false">
+   <div id="formId" class="form-content">
+      <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
          <div class="form-head"> EMPLOYEE PAYROLL FORM </div>
             <div class="row-content">
                <label class="label text" for="name">Name</label>
                <input class="input" type="text" id="name" name="name" placeholder="Your Name.." required>
-               <error-output class="name-error" for="name"></error-output>
+               <error-output class="text-error" for="text"></error-output>
             </div>
+      <!-- </form>
+   </div> -->
+
+      <!-- UC2 -->
+   <!-- <div class="form-content">
+      <form class="form" action="" onsubmit="save();return false">
+         <div class="form-head"> EMPLOYEE PAYROLL FORM </div> -->
+            <!-- <div class="row-content">
+               <label class="label text" for="name">Name</label>
+               <input class="input" type="text" id="name" name="name" placeholder="Your Name.." required>
+               <error-output class="name-error" for="name"></error-output>
+            </div> -->
 
             <!-- UC3 -->
             <div class="row-content">
@@ -121,6 +132,7 @@
                      <option value="29">29</option>
                      <option value="30">30</option>
                      <option value="31">31</option>
+                     <error-output class="day-error" for="day"></error-output>
                   </select>
                   <select  id="month" name="Month">
                      <option value="Jan">January</option>
