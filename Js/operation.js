@@ -130,6 +130,51 @@ class EmployeePayrollData {
 
 }
 
+const save = () =>{
+        try {
+            let EmployeePayrollData = createEmployeePayroll();
+        }catch (e) {
+        return;
+    }
+}
+
+const createEmployeePayroll = () =>{
+let EmployeePayrollData = new EmployeePayrollData();
+        try {
+            employeePayrollData.name = getInputValueById('#name');
+        }catch (e) {
+        setTextValue('.text-error' , e);
+        throw e;
+    }
+    employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
+    employeePayrollData.gender= getSelectedValues('[name=gender]').pop();
+    employeePayrollData.department = getSelectedValues('[name=department]');
+    employeePayrollData.salary = getInputValueById('#salary');
+    employeePayrollData.note = getInputValueById('#note');
+    let date = getInputValueById('#day') +" " +getInputValueById('#month') +" " +getInputValueById('#year')
+    employeePayrollData.date = Date.parse(date);
+    alert(employeePayrollData.toString());
+    return employeePayrollData;
+}
+
+const getSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    let selItems = [];
+    allItems.forEach(items => {
+      if(items.checked) selItems.push(items.value);  
+    });
+    return selItems;
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
+
+const getInputElementValue = (id) => {
+    let value = document.getElementById(id).value;
+    return value;
+}
 
 function save(){
     // let objectArray = [];
