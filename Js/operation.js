@@ -26,16 +26,22 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     });
 });
 
-const setname = document.querySelector('#name');
-const nameError = document.querySelector('.name-error');
+    const salary= document.querySelector('#salary');
+    const output= document.querySelector('.salary-output');
+    output.textContent=salary.value;
+    salary.addEventListener('input', function(){
+        output.textContent=salary.value;
+    });
+
+    const setname = document.querySelector('#name');
+    const nameError = document.querySelector('.text-error');
     setname.addEventListener('input', function(){
     let nameRegex = RegExp('^[A-Z][a-z]{2,}$');
     if(nameRegex.test(setname.value)){
         nameError.textContent="";
         this.name = setname;
     } else nameError.textContent="Name is Incorrect!";
-});
-
+    });
 
 class EmployeePayrollData {
     name;
